@@ -1,0 +1,70 @@
+.burger {
+	position: relative;
+	display: inline-block;
+	width: 2.6rem;
+	z-index: 102;
+
+	@include bp($point_5, min) {
+		height: 1.2rem;
+	}
+
+	@include bp($point_2, min) {
+		display: none;
+	}
+	
+	@include bp($point_5) {
+		height: 1.4rem;
+	}
+	
+	&::before,
+	&::after{
+		content: '';
+		position: absolute;
+		width: inherit;
+		height: 2px;
+		background-color: $color_text_base;
+
+		transition: .3s;
+	}
+
+	&::before{
+
+		@include bp($point_5, min) {
+			top: 0;
+		}
+		@include bp($point_5) {
+			top: 1px;
+		}
+	
+	}
+	&::after{
+		bottom: 0;
+	}
+
+	&.burger--open {
+		& .burger_decor {
+			opacity: 0;
+			transform: translateX(-100%);
+		}
+		&::before{
+			top: 5px;
+			transform: rotate(45deg);
+		}
+		&::after{
+			bottom: 5px;
+			transform: rotate(-45deg);
+		}
+	}
+}
+
+.burger_decor {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: inherit;
+	height: 2px;
+	transform: translateY(-50%);
+	background-color: $color_text_base;
+
+	transition: .3s ease-in-out;
+}

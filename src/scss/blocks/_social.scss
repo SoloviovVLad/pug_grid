@@ -1,0 +1,56 @@
+.social_list {
+	@extend %global_flex_block_row_nowrap_flex-start_center
+}
+
+.social_item {
+	margin-right: 2.4rem;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.main_social .icon {
+	transition: .3s;
+}
+
+
+
+.social_link{
+	display: block;
+	color: $greyColor;
+
+	.footer_social & {
+		color: $white;
+		transition: .3s;
+		@include bp($point_3,min) {
+
+			&:hover {
+				color: $hover_color_footer;
+			}
+		}
+	}
+
+	@include bp($point_3,min) {
+		&:hover{
+			color: $hover_color_header_social;
+		}
+	}
+
+	&.social_link--size_1_mod {
+		width: 1rem;
+		height: 2rem;
+	}
+	&.social_link--size_2_mod {
+		width: 2.4rem;
+		height: 1.94rem;
+	}
+	&.social_link--size_3_mod {
+		width: 3rem;
+		height: 2rem;
+	}
+	&.social_link--size_4_mod {
+		width: 2rem;
+		height: 1.4rem;
+	}
+}

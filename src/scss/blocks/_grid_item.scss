@@ -1,0 +1,405 @@
+.grid_item {
+	@extend %global_flex_block_column_nowrap_flex-start_stretch;
+
+	position: relative; 
+	min-height: 22rem;
+	background-color: $color_item_bg ;
+
+	&.grid_item--pos_1_mod {
+
+		@include bp($point_5, min) {
+			grid-column: span 2;
+		} 
+		
+		@include bp($point_5) {
+			grid-column: span 1;
+		} 
+	}
+
+	&.grid_item--pos_2_mod {
+
+		@include bp($point_5, min) {
+			grid-column: span 2;    
+			grid-row: span 2;   
+		} 
+
+		@include bp($point_5) {
+			grid-column: span 1;
+		} 
+	}
+
+	&.grid_item--pos_3_mod {
+
+		@include bp($point_4, min) {
+			grid-column: span 3;    
+			grid-row: span 2;    
+		}
+
+		@include bp($point_4, $point_5) {
+			grid-column: span 2;
+		}
+
+		@include bp($point_5) {
+			grid-column: span 1;
+		}
+	}
+
+	&.grid_item--pos_4_mod {
+		grid-row: span 2;    
+	}
+}
+
+.grid_item--bg_mod {
+	background: none;
+}
+
+.grid_item_text__title {
+	display: block;
+	width: 100%;
+	margin-bottom: 1rem;
+	word-wrap:break-word;
+	font-size: 1.6rem;
+	color: $color_text_base;
+	transition: .3s;
+
+	&:hover {
+		text-shadow: 0 0 1px rgba($black, .6);
+	}
+
+	&.grid_item_text__title--size_1_mod {
+		font-size: 3.6rem;
+		line-height: 3.6rem;
+	}
+
+	&.grid_item_text__title--size_2_mod {
+		font-size: 2.2rem;
+	}
+
+	& .grid_item_text__title--mod_color {
+		max-width: fit-content;
+		margin-bottom: 0.4rem;
+		padding: 0.6rem 1.4rem;
+		color: $color_footer_bg;
+		background-color: $white;
+	}
+
+	.grid_item--bg_mod & {
+		font-size: 1.6rem;
+		text-transform: uppercase;
+		color: $white;
+	}
+
+	.grid_item--video_mod & {
+		@extend %global_flex_block_column_nowrap_flex-start_center;
+
+		width: inherit;
+	}
+}
+
+.grid_item_content {
+	@extend %global_flex_block_column_nowrap_flex-start_stretch;
+
+	height: 100%;
+
+	@include bp($point_5, min) {
+		padding: 1.4rem 2.4rem;
+	}
+
+	@include bp($point_5) {
+		padding: 1.4rem 1.4rem;
+	}
+
+	.grid_item--bg_mod & {
+		justify-content: flex-end;
+	}
+
+	.grid_item--img_mod & {
+		width: 50%;
+	}
+
+	.grid_item--img_mod.grid_item--pos_4_mod & {
+		width: 100%;
+	}
+	.grid_item--pos_3_mod & {
+		padding: 2.8rem 2.4rem 1.4rem 2.4rem;
+	}
+}
+
+.grid_item_text__caption {
+	@extend %global_flex_block_row_wrap_flex-start;
+
+	margin-bottom: 1rem;
+	font-size: 1.6rem;
+
+	.grid_item--bg_mod & {
+		flex-direction: column;
+	}
+
+	.grid_item--video_mod & {
+		margin-bottom: 5rem;
+	}    
+
+	.grid_item--pos_2_mod & {
+		flex-direction: row;
+	}
+}
+
+.grid_item_text__description {
+	margin-bottom: 1rem;
+	font-size: 1.2rem;
+
+	.grid_item--bg_mod & {
+		color: $white;
+	}
+}
+
+.grid_item_tag {
+	position: relative;
+	max-width: fit-content;
+	margin-right: auto;
+	padding-bottom: 0.6rem;
+	padding-right: 1.6rem;
+	font-size: 1.2rem;
+	font-weight: 500;
+	line-height: 1.2rem;
+	color: $color_tag_mod_5;
+
+	transition: .3s;
+
+	&:hover {
+		&::before{
+			transform-origin: 0 50%;
+			transform: scale3d(1,1,1);
+		}
+	}
+
+	@include bp($point_3,min){
+		&::before{
+			content: '';
+			position: absolute;
+			bottom: 2px;
+			left: 0%;
+			width: 95%;
+			height: 1px;
+			transform-origin: 100% 50%;
+			transform: scale3d(0,1,1) ;
+			transition: transform .5s;
+			z-index: 100;
+		}
+	}
+
+	&.grid_item_tag--color_1_mod {
+		color: $color_tag_mod_1;
+		&::before{
+			background-color: $color_tag_mod_1;
+		}
+	}
+
+	&.grid_item_tag--color_2_mod {
+		color: $color_tag_mod_2;
+		&::before{
+			background-color: $color_tag_mod_2;
+		}
+	}
+
+	&.grid_item_tag--color_3_mod {
+		color: $color_tag_mod_3;
+		&::before{
+			background-color: $color_tag_mod_3;
+		}
+	}
+
+	&.grid_item_tag--color_4_mod {
+		color: $color_tag_mod_4;
+		&::before{
+			background-color: $color_tag_mod_4;
+		}
+	}
+
+	&.grid_item__tag--color_5_mod {
+		color: $color_tag_mod_5;
+		&::before{
+			background-color: $color_tag_mod_5;
+		}
+	}
+
+	&.grid_item_tag--color_6_mod {
+		color: $color_tag_mod_6;
+		&::before{
+			background-color: $color_tag_mod_6;
+		}
+	}
+
+	&.grid_item_tag--color_7_mod {
+		color: $color_tag_mod_7;
+		&::before{
+			background-color: $color_tag_mod_7;
+		}
+	}
+	
+	.grid_item--pos_3_mod &{
+		margin-bottom: 0.6rem;
+	}
+
+	.grid_item--bg_mod & {
+		padding: 0.4rem 1.4rem;
+		color: $white;
+		background-color: $color_tag_mod_5;
+	}
+}
+
+.grid_item_author {
+	font-size: 1.2rem;
+	line-height: 1.2rem;
+	color: $greyColor;
+
+	.grid_item--bg_mod & {
+		color: $white;
+	}
+
+.grid_item--video_mod & {
+		display: inline;
+		padding: 0.4rem 1rem;
+		font-size: 1.2rem;
+		border: 1px solid $white;
+		margin-bottom: 0;
+	}
+}
+
+.grid_item_date_block {
+	display: inline-flex;
+	color: $greyColor;
+	margin-top: auto;
+
+	.grid_item--bg_mod & {
+		margin-top: 1.6rem;
+		color: $white;
+	}
+
+	& .grid_item_date_block__date {
+		padding-right: 1rem;
+	}
+
+	& .grid_item_date_block__time {
+		margin-left: auto;
+	}
+
+	& .grid_item_date_block__date,
+	& .grid_item_date_block__time {
+		font-size: 1.2rem;
+		color: inherit;
+	}
+}
+
+.grid_item_background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+
+}
+
+.grid_item_text {
+
+	.grid_item--video_mod & {
+		@extend %global_flex_block_row_wrap_flex-start_center;
+
+		flex-direction: column-reverse;
+		max-width: fit-content;
+		margin-left: auto;
+	}
+}
+
+.btn_watch {
+	@extend %global_flex_block_row_wrap_flex-start;
+
+	position: absolute;
+	bottom: 2rem;
+	right: 2rem;
+	cursor: pointer;
+
+	& .btn_watch__text {
+		margin-right: 1rem;
+		font-size: 1.2rem;
+		color: $white;
+	}
+
+	& .btn_watch__icon {
+		width: 1.74rem;
+		height: 1.74rem;
+		color: $white;
+	}
+}
+
+.grid_item--img_mod {
+	&.grid_item--pos_1_mod {
+		flex-direction: row;
+	}
+}
+
+.grid_item_img_wrapper {
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+
+	& .grid_item_img{
+		transition: .3s;
+
+		&:hover{
+			transform: scale(1.05);
+		}
+	}
+	.grid_item--img_mod.grid_item--pos_4_mod & {
+		width: 100%;
+	}
+}
+
+.grid_item_label {
+	position: absolute;
+	top: 1.2rem;
+	right: 1.2rem;
+	text-transform: uppercase;
+	color: $white;
+
+	&.grid_item_label--mod_1,
+	&.grid_item_label--mod_2 {
+		display: none;
+
+	}
+	
+	&.grid_item_label--mod_1 {
+		display: block;
+
+		&::before{
+			content: 'New!';
+			position: absolute;
+			top: 0;
+			right: 0;
+			font-size: 1.6rem;
+			text-transform: uppercase;
+		}
+	}
+
+	& .icon_light{
+		display: none;
+	}
+
+	&.grid_item_label--mod_2 {
+		display: block;
+		width: 0.6rem;
+		height: 1.4rem;
+		color: $color_text_base;
+		&::before{
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		& .icon_light {
+			display: block;
+		}
+	}
+}

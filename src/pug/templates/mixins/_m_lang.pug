@@ -1,0 +1,8 @@
+mixin lang(langArray)
+    .lang
+        ul.lang__list
+            each item in langArray.items
+                li.lang__item
+                    a(href='').lang__link= item.name
+
+

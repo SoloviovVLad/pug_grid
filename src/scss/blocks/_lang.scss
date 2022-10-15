@@ -1,0 +1,42 @@
+.lang__list {
+	@extend %global_flex_block_row_nowrap_flex-start_center;
+}
+.lang__item {
+	position: relative;
+	padding: 0 0.6rem;
+	font-size: 1.6rem;
+	text-transform: uppercase;
+	color: $greyColor;
+	
+	transition: .3s;
+	&:hover {
+		color: darken($greyColor, 50%);
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 50%;
+		width: 1px;
+		height: 80%;
+		background-color: $greyColor;
+		transform: translateY(-50%);
+	}
+
+	&:first-child {
+		padding-left: 0;
+	}
+
+	&:last-child {
+		padding-right: 0;
+
+		&::before {
+			background-color: transparent;
+		}
+	}
+}
+
+.lang__link{
+	color: inherit;
+	
+}

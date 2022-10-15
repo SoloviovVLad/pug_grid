@@ -1,0 +1,173 @@
+// .footer {
+// 	width: 100%;
+// 	min-height: var(--height-footer);
+// 	flex: 0 0 auto;
+
+// 	font-size: 1rem;
+
+// 	will-change: transform;
+// }
+
+.footer {
+	padding: 2rem 1.4rem 10rem 1.4rem;
+	background-color: $color_footer_bg;
+}
+
+.footer__wrapper {
+	display: grid;
+
+	@include bp($point_2, min){
+		@include flex_block(row, nowrap, space-between, flex-start);
+	}
+
+	@include bp($point_6, min) {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+	}
+
+	@include bp($point_6) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 4rem;
+	}
+}
+
+.footer__logo {
+	display: block;
+	margin-bottom: 10rem;
+	width: 13.6rem;
+}
+
+.footer_column__title,
+.footer_nav__list {
+
+	@include bp($point_2) {		
+		max-width: 15rem;
+	}
+}
+
+.footer_column__title,
+.footer_nav__item {
+	padding-bottom: 0.74rem;
+	margin-bottom: 2.64rem;
+	font-size: 1.4rem;
+	color: $white;
+	text-transform: uppercase;
+	border-bottom: 1px solid $white;
+
+
+}
+
+.footer_nav__item {
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+
+.footer_nav__item .footer_nav__link {
+	color: inherit;
+	text-decoration: none;
+	transition: .3s;
+
+	@include bp($point_3,min) {
+
+		&:hover {
+			color: $hover_color_footer;
+		}
+	}
+}
+
+.footer_column {
+
+	&:last-child {
+		width: 40rem;
+	
+		@include bp($point_2, $point_6) {
+			grid-column: span 4;
+			grid-row: span 1;
+			width: 100%;
+		}
+
+		@include bp($point_6) {
+			grid-column: span 3;
+			grid-row: span 1;
+			width: 100%;
+		}
+	}
+
+	@include bp($point_2, $point_6) {
+		grid-column: span 1;
+	}
+
+	@include bp($point_6) {
+		grid-column: span 1;
+
+		&:first-child {
+			grid-column: span 3;
+		}
+	}
+}
+
+.footer_social {
+	margin-bottom: 1.7rem;
+}
+
+.footer__copyright {
+	display: inline-flex;
+	align-items: center;
+	color: $white;
+
+	& .footer__copyright__icon {
+		margin-right: 0.5rem;
+		font-size: 2.4rem;
+	}
+}
+
+.footer_tag_list__title {
+	margin-bottom: 2.64rem;
+	font-size: 1.4rem;
+	color: $white;
+	text-transform: uppercase;
+}
+
+.footer_tag_list__item {
+	margin-bottom: 2rem;
+
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+
+.footer_tag_list__link {
+	font-size: 1.4rem;
+	color: $white;
+	text-decoration: none;
+	transition: .3s;
+
+	@include bp($point_3,min) {
+		&:hover {
+			color: $hover_color_footer;
+		}
+	}
+}
+
+	
+
+.footer_description {
+	margin-bottom: 2rem;
+
+	& .footer_description__paragraph {
+		display: inline-block;
+		margin-bottom: 2rem;
+		font-size: 1.2rem;
+		color: $white;
+		line-height: 1.6rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.footer_form {
+	display: flex;
+}
